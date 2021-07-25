@@ -1,5 +1,5 @@
-Hackathon: ETH CC Hackathon 2021
-### UniSwap API Best Hack : https://gitcoin.co/issue/unigrants/ugp-hacks/3/100026166
+
+### UniSwap  ETH CC Hackathon 2021 : https://gitcoin.co/issue/unigrants/ugp-hacks/3/100026166
 
 ### Gitcoin Grants Round 10 Badger Builder Honey Pot
 #### https://gitcoin.co/issue/Badger-Finance/gitcoin/2/100025931
