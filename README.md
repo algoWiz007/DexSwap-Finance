@@ -9,7 +9,7 @@ Hackathon: ETH CC Hackathon 2021
 
 # DexSwap Finance ($DEXS)
 
-Decentralized Protocol optimizer for Automated Token Exchange on Ethereum with Adjustable Fees
+Decentralized Protocol Optimizer for Multiple Exchanges
 
 <p align="center">
  <img src="./uni_dexswap.png">
