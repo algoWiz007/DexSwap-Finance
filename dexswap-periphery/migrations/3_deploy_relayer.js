@@ -88,9 +88,8 @@ module.exports = async (deployer) => {
         await deployer.deploy(DexSwapArbitrage, UniswapFactoryInstance.address, DEXSWAP_ROUTERInstance.address);
         const ARBITRAGE_INSTANCE = await DexSwapArbitrage.deployed();
         console.log(`ARBITRAGE ADDRESS: ${await ARBITRAGE_INSTANCE.address}`);
-
         console.log("DONE");
-
+        
     } else if (network() === "mumbai") {
     } else if (network() === "matic") {}
 };
