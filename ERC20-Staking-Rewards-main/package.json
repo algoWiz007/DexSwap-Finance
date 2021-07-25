@@ -1,0 +1,47 @@
+{
+    "name": "erc20-staking-rewards",
+    "version": "1.0.3",
+    "description": "Generic contracts suite to bootstrap staking campaigns in which stakers get rewarded over time. Supports multiple ERC20 reward/stakable tokens and locked staking (i.e. no withdraw until the end of the distribution if tokens are staked).",
+    "files": [
+        "/ERC20StakingRewardsDistribution.sol",
+        "/interfaces/IERC20StakingRewardsDistribution.sol",
+        "/ERC20StakingRewardsDistributionFactory.sol",
+        "/interfaces/IERC20StakingRewardsDistributionFactory.sol",
+        "/build/ERC20StakingRewardsDistribution.json",
+        "/build/ERC20StakingRewardsDistributionFactory.json"
+    ],
+    "scripts": {
+        "lint:eslint": "eslint \"test/**/*.js\"",
+        "lint:prettier": "prettier -l contracts/**/*.sol && prettier -l test/**/*.js",
+        "lint:commit-message": "commitlint -e",
+        "lint": "yarn lint:eslint && yarn lint:prettier",
+        "test": "truffle test --runner-output-only",
+        "test:coverage": "truffle run coverage",
+        "test:gasreport": "truffle test --gas-report",
+        "compile": "truffle compile",
+        "prepack": "cp ./contracts/*.sol ./ && mkdir ./interfaces && cp ./contracts/interfaces/*.sol ./interfaces",
+        "postpack": "rm -rf ./*.sol rm -rf ./interfaces"
+    },
+    "author": "Uri Source By Federico Luzzi || Modify By Agin DropDisco || gin.dropdisco@gmail.com ||",
+    "license": "GPL-3.0",
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.0.0",
+        "luxon": "^1.27.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "babel-eslint": "^10.1.0",
+        "bn.js": "^5.1.3",
+        "chai": "^4.2.0",
+        "eslint": "^7.13.0",
+        "eth-gas-reporter": "^0.2.20",
+        "ganache-cli": "^6.12.1",
+        "husky": "^4.3.0",
+        "prettier": "^2.1.2",
+        "prettier-plugin-solidity": "^1.0.0-beta.2",
+        "solhint-plugin-prettier": "^0.0.5",
+        "solidity-coverage": "^0.7.13",
+        "truffle": "^5.1.58"
+    }
+}
