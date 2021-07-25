@@ -1,12 +1,6 @@
 
 ### UniSwap  ETH CC Hackathon 2021 : https://gitcoin.co/issue/unigrants/ugp-hacks/3/100026166
 
-### Gitcoin Grants Round 10 Badger Builder Honey Pot
-#### https://gitcoin.co/issue/Badger-Finance/gitcoin/2/100025931
-
-### Polygon GR10 Hackathon Bounties
-#### https://gitcoin.co/issue/maticnetwork/matic-bounties/22/100025921
-
 # DexSwap Finance ($DEXS)
 
 Decentralized Protocol Optimizer for Multiple Exchanges
