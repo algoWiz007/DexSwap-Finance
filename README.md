@@ -21,19 +21,6 @@ Decentralized Protocol Optimizer for Multiple Exchanges
  <img src="https://raw.githubusercontent.com/Agin-DropDisco/DexSwap/main/USER-DATA.png">
  </p>
  
-### Is this usefull for Badger Finance? of course yes!
-
-- We can easily earn rewards like WBTC, Badger, DIGG, renBTC with just a simple way, we can claim the rewards in almost every time, every day
-- See the whole data like Rewards Program, Total Value, Total Rewards, Remaining, Pool Type, Starts and End Date
-- Claimable Rewards Data, Claimed Rewards Data, Staked and more.
-- There's a Testnet Chain like Matic Testnet, and Rinkeby that you can try before go to the Matic Mainnet chain to make all the users understand how to use and earn with DexSwap Finance.
-
-
-[DEXSWAP FRONTEND RINKEBY](https://dexswap.netlify.app)
-> Works in:  RINKEBY 
-> Liquidity Value in BADGER
-
-
 [DEXSWAP FRONTEND RINKEBY](https://dexswap-badger-rinkeby.netlify.app/)
 > Works in:  RINKEBY 
 > Liquidity Value in USD
