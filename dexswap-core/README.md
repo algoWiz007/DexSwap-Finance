@@ -1,4 +1,5 @@
-# DEXswap Core . 
+# DEXswap Core 
+- Fork from Uniswapv2 Core smart contracts with some of Modifications.
 
 ## Clone Repository
 
