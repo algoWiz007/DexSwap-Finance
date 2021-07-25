@@ -1,0 +1,54 @@
+{
+  "name": "dexswap-core",
+  "version": "0.1.6",
+  "author": "Agin DropDisco",
+  "files": [
+    "contracts",
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Agin-DropDisco/dexswap-core"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^2.5.1",
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^2.4.1",
+    "ethereumjs-util": "^6.2.0",
+    "ethers": "^4.0.45",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "solc": "0.5.16",
+    "truffle-flattener": "^1.4.4",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-plugin-verify": "^0.5.8",
+    "ts-node": "^8.5.4"
+  },
+  "scripts": {
+    "deploy:ganache": "truffle migrate --network ganache",
+    "deploy:rinkeby": "truffle migrate --network rinkeby",
+    "deploy:mumbai": "truffle migrate --network mumbai",
+    "lint": "yarn prettier ./test/*.ts --check",
+    "lint:fix": "yarn prettier ./test/*.ts --write",
+    "clean": "rimraf ./build/",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "flattener": "./scripts/flattener.sh",
+    "test": "mocha",
+    "prepublishOnly": "yarn test"
+  },
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "openzeppelin-solidity": "2.3.0",
+    "typescript": "^3.9.5",
+    "zeppelin-solidity": "^1.12.0"
+  }
+}
