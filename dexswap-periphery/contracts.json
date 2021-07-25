@@ -1,0 +1,18 @@
+{
+    "mainnet": {
+      "router": "0x0000000000000000000000000000000000000000"
+    },
+
+    "rinkeby": {
+      "router": "0xA41745fCc8193D52eF903D65509836c6BAEfc0eB"
+    },
+
+    "mumbai": {
+      "router": "0x0000000000000000000000000000000000000000"
+    },
+
+    "moonbase": {
+      "router": "0xCBd9c2C10Abb84FbE4FA3F9Ee31cFD39EDa87D6F"
+    }
+
+}
