@@ -1,2 +1,2 @@
 Hackathon: ETH CC Hackathon 2021
-### ParaSwap API Best Hack : https://gitcoin.co/issue/paraswap/ethcc_hackathon/1/100026160
+### UniSwap API Best Hack : https://gitcoin.co/issue/unigrants/ugp-hacks/3/100026166
