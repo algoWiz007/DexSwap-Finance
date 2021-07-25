@@ -1,0 +1,71 @@
+{
+  "name": "dexswap-sdk",
+  "license": "AGPL-3.0-or-later",
+  "version": "0.1.1",
+  "description": "An SDK for building applications on top of DexSwap",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/Agin-DropDisco/dexs-sdk",
+  "keywords": [
+    "dexswap",
+    "ethereum",
+    "moonbeam",
+    "matic"
+  ],
+  "module": "dist/sdk.esm.js",
+  "scripts": {
+    "lint": "tsdx lint src test",
+    "build": "tsdx build",
+    "start": "tsdx watch",
+    "test": "tsdx test",
+    "prepare": "tsdx build"
+  },
+  "dependencies": {
+    "@makerdao/multicall": "^0.11.0",
+    "big.js": "^5.2.2",
+    "decimal.js-light": "^2.5.0",
+    "dexswap-core": "git://github.com/Agin-DropDisco/module-dexswap-core.git#main",
+    "dexswap-periphery": "git://github.com/Agin-DropDisco/module-dexswap-periphery.git#main",
+    "dexswap-sdk": "git://github.com/Agin-DropDisco/sdk5.git",
+    "jsbi": "^3.1.1",
+    "node-fetch": "^2.6.1",
+    "tiny-invariant": "^1.1.0",
+    "tiny-warning": "^1.0.3",
+    "toformat": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@ethersproject/abi": "^5.0.7",
+    "@ethersproject/address": "^5.0.0-beta",
+    "@ethersproject/contracts": "^5.0.0-beta",
+    "@ethersproject/networks": "^5.0.0-beta",
+    "@ethersproject/providers": "^5.0.0-beta",
+    "@ethersproject/solidity": "^5.0.0-beta"
+  },
+  "devDependencies": {
+    "@ethersproject/abi": "^5.0.7",
+    "@ethersproject/address": "^5.0.2",
+    "@ethersproject/contracts": "^5.0.2",
+    "@ethersproject/networks": "^5.0.2",
+    "@ethersproject/providers": "^5.0.5",
+    "@ethersproject/solidity": "^5.0.2",
+    "@types/big.js": "^4.0.5",
+    "@types/jest": "^24.0.25",
+    "@types/node-fetch": "^2.5.8",
+    "babel-plugin-transform-jsbi-to-bigint": "^1.3.1",
+    "tsdx": "^0.12.3"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
+  },
+  "jest": {
+    "testTimeout": 20000
+  }
+}

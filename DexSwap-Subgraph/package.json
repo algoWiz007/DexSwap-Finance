@@ -1,0 +1,37 @@
+{
+  "name": "dexswap-subgraph",
+  "version": "1.0.0",
+  "repository": "https://github.com/Agin-DropDisco/DexSwapSubgraph",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "codegen:mainnet": "graph codegen --output-dir src/types/",
+    "codegen:rinkeby": "graph codegen subgraph.rinkeby.yaml --output-dir src/types/",
+    "codegen:polygon": "graph codegen subgraph.polygon.yaml --output-dir src/types/",
+    "codegen:moonbase": "graph codegen subgraph.moonbeam.yaml --output-dir src/types/",
+    "codegen:xdai": "graph codegen subgraph.xdai.yaml --output-dir src/types/",
+    "build:mainnet": "graph build",
+    "build:rinkeby": "graph build subgraph.rinkeby.yaml",
+    "build:polygon": "graph build subgraph.polygon.yaml",
+    "build:moonbase": "graph build subgraph.moonbeam.yaml",
+    "build:xdai": "graph build subgraph.xdai.yaml",
+    "create-local": "graph create agin-dropdisco/ginrinkeby --node http://127.0.0.1:8020",
+    "deploy-local:rinkeby": "graph deploy agin-dropdisco/ginrinkeby subgraph.rinkeby.yaml --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy-local:mainnet": "graph deploy agin-dropdisco/test-mainnet subgraph.mainnet.yaml --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy-local:xdai": "graph deploy agin-dropdisco/ginrinkeby subgraph.xdai.yaml --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy:rinkeby": "graph deploy agin-dropdisco/test-rinkeby subgraph.rinkeby.yaml --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token --debug",
+    "deploy:polygon": "graph deploy agin-dropdisco/dexswap-matic-gr10 subgraph.polygon.yaml --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token  --debug",
+    "deploy:moonbase": "graph deploy agin-dropdisco/ginmoonbase subgraph.moonbeam.yaml --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token  --debug",
+    "deploy:xdai": "graph deploy agin-dropdisco/ginrinkeby subgraph.xdai.yaml --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token  --debug",
+    "deploy:mainnet-alpha": "graph deploy agin-dropdisco/ginrinkeby subgraph.mainnet.yaml --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token  --debug"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.19.0",
+    "@graphprotocol/graph-ts": "^0.19.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.2"
+  }
+}

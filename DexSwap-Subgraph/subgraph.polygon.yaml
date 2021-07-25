@@ -1,0 +1,116 @@
+specVersion: 0.0.2
+description: DexSwap is a decentralized protocol for automated token exchange on Ethereum.
+repository: https://github.com/Agin-DropDisco/dexswap-subgraph-1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Factory
+    network: matic
+    source:
+      address: '0x1d2b4C065D4A34e9dc9c557B7C96529ebBf13b8e'
+      abi: Factory
+      startBlock: 16068800 
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/factory.ts
+      entities:
+        - Pair
+        - Token
+      abis:
+        - name: Factory
+          file: ./abis/factory.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: ERC20SymbolBytes
+          file: ./abis/ERC20SymbolBytes.json
+        - name: ERC20NameBytes
+          file: ./abis/ERC20NameBytes.json
+      eventHandlers:
+        - event: PairCreated(indexed address,indexed address,address,uint256)
+          handler: handleNewPair
+  - kind: ethereum/contract
+    name: StakingRewardsFactory
+    network: matic
+    source:
+      address: '0x82d2b88aedc4ea78ff9899e593a28ecfbb0d2450'
+      abi: StakingRewardsFactory
+      startBlock: 16057419 
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/staking-rewards.ts
+      entities:
+        - Distribution
+      abis:
+        - name: StakingRewardsFactory
+          file: ./abis/staking-rewards-factory.json
+      eventHandlers:
+        - event: DistributionCreated(address,address)
+          handler: handleDistributionCreation
+templates:
+  - kind: ethereum/contract
+    name: Pair
+    network: matic
+    source:
+      abi: Pair
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/core.ts
+      entities:
+        - Pair
+        - Token
+      abis:
+        - name: Pair
+          file: ./abis/pair.json
+        - name: Factory
+          file: ./abis/factory.json
+      eventHandlers:
+        - event: Mint(indexed address,uint256,uint256)
+          handler: handleMint
+        - event: Burn(indexed address,uint256,uint256,indexed address)
+          handler: handleBurn
+        - event: Swap(indexed address,uint256,uint256,uint256,uint256,indexed address)
+          handler: handleSwap
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: Sync(uint112,uint112)
+          handler: handleSync
+  - kind: ethereum/contract
+    name: Distribution
+    network: matic
+    source:
+      abi: StakingRewardsDistribution
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/staking-rewards.ts
+      entities:
+        - Deposit
+        - Withdrawal
+        - Claim
+        - Recovery
+      abis:
+        - name: StakingRewardsDistribution
+          file: ./abis/staking-rewards-distribution.json
+      eventHandlers:
+        - event: Initialized(address[],address,uint256[],uint64,uint64,bool,uint256)
+          handler: handleDistributionInitialization
+        - event: Canceled()
+          handler: handleCancelation
+        - event: Staked(indexed address,uint256)
+          handler: handleDeposit
+        - event: Withdrawn(indexed address,uint256)
+          handler: handleWithdrawal
+        - event: Claimed(indexed address,uint256[])
+          handler: handleClaim
+        - event: Recovered(uint256[])
+          handler: handleRecovery
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransfer
